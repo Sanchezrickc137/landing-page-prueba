@@ -1,0 +1,18 @@
+node_modules/
+*.log
+.preview/
+
+# Configuración privada y archivos generados localmente.
+.env
+.env.*
+!.env.example
+dist/
+coverage/
+
+# Editor y sistema operativo.
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+Desktop.ini

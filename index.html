@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Landing page con nombres técnicos como marcadores de posición." />
+  <title>Landing Page Prueba</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./hero-background.css" />
+  <script src="./app.js" defer></script>
+  <script src="./hero-background.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#bienvenida">Saltar al contenido</a>
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" /><circle cx="8" cy="8" r="1.5" /><path d="m3 17 5-5 4 4 4-6 5 7" /></symbol>
+    <symbol id="menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" /></symbol>
+    <symbol id="plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16" /></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#bienvenida" aria-label="Nombre del sitio, inicio">
+        <span class="logo">Logotipo</span>
+        <span class="brand-text"><strong>Nombre del sitio</strong><span>Eslogan (opcional)</span></span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-controls="site-navigation" aria-expanded="false"><svg class="icon"><use href="#menu" /></svg></button>
+      <nav class="site-navigation" id="site-navigation" aria-label="Menú de navegación">
+        <span class="navigation-label">Menú de navegación</span>
+        <div class="navigation-links">
+          <a href="#bienvenida" aria-current="location">Bienvenida</a>
+          <a href="#acerca-de">Acerca de</a>
+          <a href="#modulos">Servicios</a>
+          <a href="#preguntas">Preguntas frecuentes</a>
+          <a class="nav-contact" href="#contacto">Contacto</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="bienvenida" aria-labelledby="hero-title">
+      <div class="hero-background" aria-hidden="true"></div>
+      <div class="container hero-toolbar">
+        <div class="background-control">
+          <button type="button" class="effect-toggle" id="background-toggle" aria-expanded="false" aria-controls="background-options">Fondo</button>
+          <div class="background-options" id="background-options" role="group" aria-label="Fondo de bienvenida" hidden>
+            <button type="button" data-background-option="none" aria-pressed="true">Sin fondo</button>
+            <button type="button" data-background-option="grid-1" aria-pressed="false">Grid 1</button>
+            <button type="button" data-background-option="grid-2" aria-pressed="false">Grid 2</button>
+            <button type="button" data-background-option="grid-3" aria-pressed="false">Grid 3</button>
+          </div>
+        </div>
+      </div>
+      <div class="container hero-grid">
+        <div class="hero-content" id="hero-content">
+          <div class="hero-text-content" id="hero-text-content">
+          <p class="eyebrow effect-target"><span class="effect-motion"><span class="effect-hover"><span class="effect-text">Banner principal (hero)</span></span></span></p>
+          <div class="hero-title-row">
+            <h1 id="hero-title" class="effect-target"><span class="effect-motion"><span class="effect-hover"><span class="effect-text">Título</span></span></span></h1>
+            <div class="effect-controls" role="group" aria-label="Efectos del bloque de bienvenida">
+              <button type="button" class="effect-toggle" data-hero-effect="hover" aria-pressed="false" aria-controls="hero-content">Hover</button>
+              <button type="button" class="effect-toggle" data-hero-effect="motion" aria-pressed="false" aria-controls="hero-content">Microanimación</button>
+              <button type="button" class="effect-toggle" data-hero-effect="text" aria-pressed="false" aria-controls="hero-content">Efecto de texto</button>
+            </div>
+          </div>
+          <p class="hero-subtitle effect-target"><span class="effect-motion"><span class="effect-hover"><span class="effect-text">Subtítulo</span></span></span></p>
+          <p class="paragraph effect-target"><span class="effect-motion"><span class="effect-hover"><span class="effect-text">Párrafo de introducción</span></span></span></p>
+          <div class="button-group">
+            <a class="button effect-target" href="#contacto"><span class="effect-motion"><span class="effect-hover"><span class="effect-text">Botón principal</span></span></span></a>
+            <a class="button effect-target" href="#acerca-de"><span class="effect-motion"><span class="effect-hover"><span class="effect-text">Botón secundario</span></span></span></a>
+          </div>
+          </div>
+        </div>
+        <div class="image-placeholder hero-image">
+          <div class="image-label"><svg class="icon"><use href="#image" /></svg><span>Foto de portada</span></div>
+        </div>
+      </div>
+      <div class="container transition-controls"><button type="button" class="effect-toggle transition-toggle" id="transition-toggle" aria-pressed="false" aria-controls="bienvenida acerca-de">Transición</button></div>
+    </section>
+
+    <section class="section about-section" id="acerca-de" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="image-placeholder about-image"><div class="image-label"><svg class="icon"><use href="#image" /></svg><span>Imagen</span></div></div>
+        <div class="section-copy">
+          <p class="eyebrow">Acerca de</p>
+          <h2 id="about-title">Título</h2>
+          <p class="subtitle">Subtítulo</p>
+          <p class="paragraph">Párrafo</p>
+          <a class="text-link" href="#modulos">Enlace de texto</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section modules-section" id="modulos" aria-labelledby="modules-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Servicios</p>
+          <h2 id="modules-title">Título</h2>
+          <p class="subtitle">Subtítulo</p>
+        </div>
+        <div class="modules-grid">
+          <article class="module">
+            <div class="module-top"><span class="icon-placeholder">Icono</span><p class="module-label">Módulo 1</p></div>
+            <h3>Título</h3>
+            <p class="module-subtitle">Subtítulo</p>
+            <p class="paragraph">Párrafo</p>
+            <a class="text-link" href="#contacto">Enlace</a>
+          </article>
+          <article class="module">
+            <div class="module-top"><span class="icon-placeholder">Icono</span><p class="module-label">Módulo 2</p></div>
+            <h3>Título</h3>
+            <p class="module-subtitle">Subtítulo</p>
+            <p class="paragraph">Párrafo</p>
+            <a class="text-link" href="#contacto">Enlace</a>
+          </article>
+          <article class="module">
+            <div class="module-top"><span class="icon-placeholder">Icono</span><p class="module-label">Módulo 3</p></div>
+            <h3>Título</h3>
+            <p class="module-subtitle">Subtítulo</p>
+            <p class="paragraph">Párrafo</p>
+            <a class="text-link" href="#contacto">Enlace</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section banner-section" id="banner" aria-labelledby="banner-title">
+      <div class="container banner-inner">
+        <div><p class="eyebrow">Banner de llamada a la acción</p><h2 id="banner-title">Título</h2><p class="subtitle">Subtítulo</p></div>
+        <a class="button" href="#contacto">Botón de llamada a la acción</a>
+      </div>
+    </section>
+
+    <section class="section faq-section" id="preguntas" aria-labelledby="faq-title">
+      <div class="container faq-grid">
+        <div><p class="eyebrow">Preguntas frecuentes</p><h2 id="faq-title">Título</h2><p class="subtitle">Subtítulo</p></div>
+        <div class="accordion">
+          <details><summary>Pregunta <svg class="icon"><use href="#plus" /></svg></summary><p class="answer">Respuesta</p></details>
+          <details><summary>Pregunta <svg class="icon"><use href="#plus" /></svg></summary><p class="answer">Respuesta</p></details>
+          <details><summary>Pregunta <svg class="icon"><use href="#plus" /></svg></summary><p class="answer">Respuesta</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contacto" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="section-copy contact-copy">
+          <p class="eyebrow">Contacto</p>
+          <h2 id="contact-title">Título</h2>
+          <p class="subtitle">Subtítulo</p>
+          <p class="paragraph">Párrafo</p>
+          <div class="contact-details"><p>Correo electrónico</p><p>Teléfono</p><p>Dirección</p></div>
+        </div>
+        <form id="contact-form" class="contact-form">
+          <h3>Formulario de contacto</h3>
+          <div class="form-row">
+            <label for="name">Nombre<input id="name" name="name" type="text" placeholder="Campo de texto" autocomplete="off" /></label>
+            <label for="email">Correo electrónico<input id="email" name="email" type="email" placeholder="Campo de correo" autocomplete="off" /></label>
+          </div>
+          <label for="message">Mensaje<textarea id="message" name="message" placeholder="Área de texto" rows="4"></textarea></label>
+          <label class="checkbox-label"><input id="consent" type="checkbox" /><span>Casilla de verificación</span></label>
+          <button type="submit" class="button">Botón de envío</button>
+          <p id="form-status" class="form-status" role="status" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <a class="brand" href="#bienvenida" aria-label="Nombre del sitio, inicio"><span class="logo">Logotipo</span><span class="brand-text"><strong>Nombre del sitio</strong><span>Eslogan (opcional)</span></span></a>
+        <div class="footer-links"><p class="footer-label">Navegación</p><a href="#bienvenida">Bienvenida</a><a href="#acerca-de">Acerca de</a><a href="#contacto">Contacto</a></div>
+        <div class="footer-social"><p class="footer-label">Redes sociales</p><span>Red social 1</span><span>Red social 2</span><span>Red social 3</span></div>
+      </div>
+      <div class="footer-bottom"><span>© Derechos de autor</span><span>Pie de página</span><a href="#bienvenida">Volver arriba</a></div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "estructura-landing-espanol",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "description": "Landing page en español con nombres técnicos como placeholders.",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "check": "node --check app.js && node --check hero-background.js && node --check server.mjs"
+  }
+}

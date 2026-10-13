@@ -1,0 +1,37 @@
+#bienvenida { position: relative; isolation: isolate; padding-top: 24px; }
+.hero-background { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; display: none; }
+.hero-background::before, .hero-background::after { content: ''; position: absolute; pointer-events: none; }
+#bienvenida[data-background]:not([data-background="none"]) .hero-background { display: block; }
+.hero-toolbar { display: flex; justify-content: flex-end; position: relative; z-index: 4; margin-bottom: 24px; }
+.background-control { position: relative; }
+#background-toggle { min-width: 108px; min-height: 40px; }
+#background-toggle.is-active, .background-options button[aria-pressed="true"] { background: #238443; color: #fff; }
+.background-options { position: absolute; right: 0; top: calc(100% + 10px); min-width: 164px; display: grid; gap: 7px; padding: 10px; border: 1px solid #111; background: #fff; box-shadow: 5px 5px 0 rgb(17 17 17 / 10%); }
+.background-options button { min-height: 38px; padding: 9px 13px; border: 1px solid #111; background: #fff; color: #111; font-size: 12px; line-height: 1.2; text-align: center; }
+.background-options button:hover { box-shadow: inset 0 0 0 1px currentColor; }
+.background-options button:focus-visible { outline-offset: 2px; }
+
+/* Rejilla estática, con tonos cálidos y sombras suaves. */
+#bienvenida[data-background="grid-1"] .hero-background { background: #f7f2e9; }
+#bienvenida[data-background="grid-1"] .hero-background::before { inset: 0; background-image: linear-gradient(rgb(140 118 91 / 14%) 1px, transparent 1px), linear-gradient(90deg, rgb(140 118 91 / 14%) 1px, transparent 1px); background-size: 48px 48px; }
+#bienvenida[data-background="grid-1"] .hero-background::after { inset: 0; background: radial-gradient(ellipse at 12% 24%, rgb(255 255 255 / 88%), transparent 58%), radial-gradient(ellipse at 86% 85%, rgb(196 166 128 / 18%), transparent 55%); box-shadow: inset 0 18px 54px rgb(114 88 51 / 5%); }
+
+/* Rejilla con movimiento autónomo; no utiliza la posición del cursor. */
+#bienvenida[data-background="grid-2"] .hero-background { background: #f1edff; }
+#bienvenida[data-background="grid-2"] .hero-background::before { inset: -64px; background-image: linear-gradient(rgb(112 82 179 / 28%) 1px, transparent 1px), linear-gradient(90deg, rgb(112 82 179 / 28%) 1px, transparent 1px); background-size: 64px 64px; animation: background-grid-drift 3.6s linear infinite; }
+#bienvenida[data-background="grid-2"] .hero-background::after { inset: -18%; background: radial-gradient(ellipse at 22% 32%, rgb(122 150 243 / 48%), transparent 36%), radial-gradient(ellipse at 72% 66%, rgb(224 135 210 / 40%), transparent 38%); animation: background-cloud-drift 5s ease-in-out infinite alternate; }
+
+/* Rejilla de puntos, partículas y luz que siguen al cursor o al tacto. */
+#bienvenida[data-background="grid-3"] .hero-background { background: #edf8f7; }
+#bienvenida[data-background="grid-3"] .hero-background::before { inset: 0; background-image: radial-gradient(rgb(40 125 125 / 25%) 1px, transparent 1.5px); background-size: 27px 27px; }
+#bienvenida[data-background="grid-3"] .hero-background::after { inset: 0; background: radial-gradient(circle 270px at var(--pointer-x, 50%) var(--pointer-y, 50%), rgb(111 208 205 / 30%), transparent 75%), radial-gradient(ellipse at 82% 28%, rgb(140 175 239 / 16%), transparent 62%); }
+.hero-particles { display: none; position: absolute; inset: 0; width: 100%; height: 100%; }
+#bienvenida[data-background="grid-3"] .hero-particles { display: block; }
+#bienvenida.is-background-paused .hero-background::before,
+#bienvenida.is-background-paused .hero-background::after { animation-play-state: paused; }
+@keyframes background-grid-drift { from { transform: translate(0, 0); } to { transform: translate(64px, 64px); } }
+@keyframes background-cloud-drift { from { transform: translate(-7%, 5%) scale(1.02); } to { transform: translate(7%, -5%) scale(1.08); } }
+@media (prefers-reduced-motion: reduce) {
+  .hero-background::before, .hero-background::after { animation: none !important; }
+}
+@media print { .hero-toolbar, .hero-background { display: none !important; } }
